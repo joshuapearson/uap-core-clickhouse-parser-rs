@@ -14,8 +14,7 @@ mod target_writer;
 
 fn main() {
     let args = Args::parse();
-    let settings_result = Settings::try_from(args);
-    let Ok(settings) = settings_result else {
+    let Ok(settings) = Settings::try_from(args) else {
         return;
     };
     println!("Reading file: {:?}", &settings.input_file);

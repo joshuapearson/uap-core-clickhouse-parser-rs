@@ -30,7 +30,7 @@ where
             eprintln!("IO Error: {:?}", e);
             WriterError::Io
         })?;
-    serde_yml::to_writer(file, &target).map_err(|e| {
+    serde_yaml_ng::to_writer(file, &target).map_err(|e| {
         eprintln!("Serialize Error: {:?}", e);
         WriterError::Serialize
     })
